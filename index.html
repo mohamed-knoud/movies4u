@@ -210,15 +210,17 @@
         let id = document.getElementById('movies-container')
             const searchInput = document.getElementById('put');
     const suggestionList = document.getElementById('suggestionList');
-searchInput.addEventListener('input', async () => {
-      const query = searchInput.value.trim();
-  // Hide the div when clicking outside of it
-  document.addEventListener('click', function(event) {
+        document.addEventListener('click', function(event) {
     var isClickInside = suggestionList.contains(event.target);
     if (!isClickInside) {
       suggestionList.style.display = 'none';
     }
   });
+searchInput.addEventListener('input', async () => {
+      const query = searchInput.value.trim();
+  // Hide the div when clicking outside of it
+        suggestionList.style.display = 'block';
+
       // Clear previous suggestions
       suggestionList.innerHTML = '';
 
